@@ -1,0 +1,16 @@
+<div
+  class="circle"
+  [class.expanded]="hover"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+>
+  <!-- Иконка + текст, видны только в свернутом состоянии -->
+  <div class="icon-text" *ngIf="!hover">
+    <!-- Замените на ваш svg или компонент-иконку -->
+    <svg width="48" height="48" viewBox="0 0 24 24"><!-- … --></svg>
+    <span>Я Продавец</span>
+  </div>
+
+  <!-- Кнопка авторизации, появляется при hover -->
+  <button class="login-btn" *ngIf="hover" (click)="onLogin()">Авторизоваться</button>
+</div>

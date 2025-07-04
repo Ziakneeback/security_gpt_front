@@ -15,6 +15,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {RegisterComponent} from "./register/register.component";
 import {AuthInterceptor} from "./auth.interceptor";
 import {AuthenticationService} from "./service/auth.service";
+import { SellerSideComponent } from './seller-side/seller-side.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {AuthenticationService} from "./service/auth.service";
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SellerSideComponent,
 
   ],
   imports: [
