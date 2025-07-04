@@ -1,0 +1,46 @@
+/* ===== header styles ===== */
+.top-bar {
+  display: flex;
+  align-items: center;
+
+  /* размеры/цвета бара */
+  height: 70px;                       /* высота как на скрине */
+  padding: 0 24px;                    /* внутренние отступы */
+  background: #2f3e52;                /* тёмно‑синий фон */
+  border-top: 3px solid #329aff;      /* тонкая голубая линия сверху */
+}
+
+/* круглый аватар‑заглушка */
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #bcbcbc;                /* серый внутри */
+}
+
+/* «растяжитель» раздвигает элементы по краям */
+.spacer {
+  flex: 1;
+}
+
+/* кнопка выбора языка */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 6px;                           /* расстояние между текстом и стрелкой */
+
+  font-size: 18px;
+  padding: 6px 20px;
+  border-radius: 9999px;              /* делает «пилюлю» */
+  background: #c7cbd0;                /* светло‑серый фон */
+  border: 2px solid #444c55;          /* тёмный обвод */
+  color: #2f3e52;                     /* текст совпадает с фоном бара */
+
+  cursor: pointer;
+}
+
+/* маленькая стрелочка */
+.caret {
+  font-size: 12px;
+  line-height: 1;
+}
