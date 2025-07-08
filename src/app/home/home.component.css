@@ -1,0 +1,9 @@
+.my-background {
+  /* путь от корня приложения */
+  background-image: url('/assets/images/background.jpg');
+  background-size: cover;        /* чтобы картинка заполняла блок */
+  background-position: center;   /* центрирование */
+  background-repeat: no-repeat;  /* без повторения */
+  width: 100%;
+  height: 400px;                 /* или любая высота */
+}

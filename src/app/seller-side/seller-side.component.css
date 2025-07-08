@@ -1,0 +1,66 @@
+:host {
+  /* чтобы контейнер не влияло на поток */
+  display: block;
+}
+
+/* сама полусфера */
+.circle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background-color: #6f829d;
+  /* скругляем только левую половину круга */
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+  transform: translateY(-50%);
+  transition:
+    width 0.6s ease,
+    height 0.6s ease,
+    top 0.6s ease,
+    left 0.6s ease,
+    border-radius 0.6s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* состояние «развёрнуто» */
+.circle.expanded {
+  /* займет почти весь экран */
+  width: 90vw;
+  height: 90vh;
+  top: 5vh;
+  left: 5vw;
+  right: auto;
+  /* можно убрать скругления или сделать их небольшими */
+  border-radius: 8px;
+}
+
+/* текст + иконка внутри свернутой сферы */
+.icon-text {
+  text-align: center;
+}
+.icon-text svg {
+  margin-bottom: 8px;
+}
+
+/* кнопка «Авторизоваться» */
+.login-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease 0.5s,
+              transform 0.3s ease 0.5s;
+}
+
+/* при разворачивании — показать кнопку */
+.circle.expanded .login-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
