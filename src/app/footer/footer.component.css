@@ -1,0 +1,59 @@
+/* общий контейнер */
+.footer-circle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50vh;
+  height: 100vh;
+  background-color: #A4B1BC;
+  border-top-left-radius: 50vh;
+  border-bottom-left-radius: 50vh;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition:
+    width 0.6s ease,
+    height 0.6s ease,
+    top 0.6s ease,
+    left 0.6s ease,
+    border-radius 0.6s ease;
+}
+
+/* стили для картинки в свёрнутом состоянии */
+.icon-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-img {
+  width: 200px;          /* подогнать под вашу иконку */
+  height: auto;
+  margin-bottom: 8px;   /* отступ до текста */
+}
+
+/* контейнер для развёрнутого состояния */
+.expanded-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.expanded-img {
+  width: 230px;       /* можно чуть больше, чем в свёрнутом виде */
+  height: auto;
+  margin-bottom: 16px; /* отступ до кнопки */
+}
+
+/* прямоугольник на весь экран */
+.footer-circle.expanded {
+   position: fixed;
+  top: 0;
+  right: 0;
+  width: 140vh;
+  height: 100vh;
+  background-color: #A4B1BC;
+  border-top-left-radius: 50vh;
+  border-bottom-left-radius: 50vh;
+}

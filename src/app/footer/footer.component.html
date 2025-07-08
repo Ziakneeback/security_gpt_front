@@ -1,5 +1,22 @@
-<footer class="bg-dark py-3 fixed-bottom">
-  <div class="container">
-    <p class="text-center text-white">Copyright © {{currentYear}} Security with GPT (Шаблон)</p>
+<div
+  class="footer-circle"
+  [class.expanded]="hover"
+  (mouseenter)="hover = true"
+  (mouseleave)="hover = false"
+>
+  <!-- Свернутое состояние -->
+  <div class="icon-text" *ngIf="!hover">
+    <!-- картинка над «Я Продавец» -->
+    <img src="assets/images/seller.png" alt="Я Продавец" class="icon-img" />
+    <span>Я Продавец</span>
   </div>
-</footer>
+
+  <!-- Развёрнутое состояние -->
+  <div class="expanded-content" *ngIf="hover">
+    <!-- картинка над кнопкой -->
+    <img src="assets/images/seller.png" alt="Авторизоваться" class="expanded-img" />
+    <button class="login-btn" (click)="onLogin()">
+      Авторизоваться
+    </button>
+  </div>
+</div>
