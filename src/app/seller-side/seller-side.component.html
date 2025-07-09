@@ -1,16 +1,21 @@
 <div
-  class="circle"
+  class="seller-circle"
   [class.expanded]="hover"
   (mouseenter)="hover = true"
   (mouseleave)="hover = false"
 >
-  <!-- Иконка + текст, видны только в свернутом состоянии -->
+  <!-- Свернутое состояние -->
   <div class="icon-text" *ngIf="!hover">
-    <!-- Замените на ваш svg или компонент-иконку -->
-    <svg width="48" height="48" viewBox="0 0 24 24"><!-- … --></svg>
-    <span>Я Продавец</span>
+    <img src="assets/images/buyer.png" alt="Я Покупатель" class="icon-img" />
+    <span>Я Покупатель</span>
   </div>
 
-  <!-- Кнопка авторизации, появляется при hover -->
-  <button class="login-btn" *ngIf="hover" (click)="onLogin()">Авторизоваться</button>
+  <!-- Развёрнутое состояние -->
+  <div class="expanded-content" *ngIf="hover">
+    <img src="assets/images/buyer.png" alt="Авторизоваться" class="expanded-img" />
+    <span class="expanded-text">Я Покупатель</span>
+    <button class="login-btn" (click)="onLogin()">
+      Авторизоваться
+    </button>
+  </div>
 </div>

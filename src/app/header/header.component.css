@@ -1,3 +1,9 @@
+:host {
+  position: relative;   /* или fixed/sticky, если нужно, чтобы хедер не скроллился */
+  z-index: 2000;        /* число больше, чем у .seller-circle и .footer-circle */
+}
+
+
 /* ===== header styles ===== */
 .top-bar {
   display: flex;

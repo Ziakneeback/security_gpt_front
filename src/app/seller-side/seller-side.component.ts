@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seller-side',
@@ -8,9 +9,9 @@ import { Component } from '@angular/core';
 export class SellerSideComponent {
   hover = false;
 
-  onLogin() {
-    
-   // this.router.navigate(['/login']);
-    console.log('Нажата кнопка Авторизоваться');
+  constructor(private router: Router) {}
+
+  onLogin(): void {
+    this.router.navigate(['/login']);
   }
 }

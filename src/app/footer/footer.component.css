@@ -27,11 +27,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #3E444A;
 }
 .icon-img {
   width: 200px;          /* подогнать под вашу иконку */
   height: auto;
-  margin-bottom: 8px;   /* отступ до текста */
+  margin-bottom: 12px;   /* отступ до текста */
+  margin-right: 65px;
 }
 
 /* контейнер для развёрнутого состояния */
@@ -40,10 +45,42 @@
   flex-direction: column;
   align-items: center;
 }
+
 .expanded-img {
-  width: 230px;       /* можно чуть больше, чем в свёрнутом виде */
+  width: 200px;
   height: auto;
-  margin-bottom: 16px; /* отступ до кнопки */
+  margin-bottom: 12px;
+  margin-right: 65px;
+}
+
+.expanded-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #3E444A;
+}
+
+.login-btn {
+  background-color: #3E444A;    /* цвет прямоугольника */
+  color: #fff;                  /* цвет текста */
+  border: none;                 /* без рамки */
+  border-radius: 12px;          /* скруглённые углы */
+  padding: 0.75rem 1.5rem;      /* вертикальный и горизонтальный отступ */
+  font-size: 1rem;              /* размер шрифта */
+  font-weight: 500;             /* чуть полужирнее */
+  cursor: pointer;              /* указатель при наведении */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* лёгкий эффект при наведении */
+.login-btn:hover {
+  background-color: #50575F;    /* чуть светлее/темнее на ваш вкус */
+  transform: translateY(-2px);
+}
+
+/* эффект нажатия */
+.login-btn:active {
+  transform: translateY(0);
 }
 
 /* прямоугольник на весь экран */

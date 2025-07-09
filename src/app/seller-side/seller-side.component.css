@@ -1,66 +1,93 @@
-:host {
-  /* чтобы контейнер не влияло на поток */
-  display: block;
-}
-
-/* сама полусфера */
-.circle {
+/* полукруг у левого края экрана */
+.seller-circle {
   position: fixed;
-  top: 50%;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  background-color: #6f829d;
-  /* скругляем только левую половину круга */
-  border-top-left-radius: 150px;
-  border-bottom-left-radius: 150px;
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  width: 50vh;
+  height: 100vh;
+  background-color: #F1E4D3;
+  /* скругляем только правые углы радиусом в половину высоты */
+  border-top-right-radius: 50vh;
+  border-bottom-right-radius: 50vh;
+  overflow: hidden;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
   transition:
     width 0.6s ease,
     height 0.6s ease,
     top 0.6s ease,
     left 0.6s ease,
     border-radius 0.6s ease;
-  overflow: hidden;
+}
+
+.seller-circle.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 140vh;
+  height: 100vh;
+  background-color: #F1E4D3;
+  /* скругляем только правые углы радиусом в половину высоты */
+  border-top-right-radius: 50vh;
+  border-bottom-right-radius: 50vh;
+}
+
+/* иконка + текст в свёрнутом виде */
+.icon-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: white;
-  cursor: pointer;
-  z-index: 1000;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #3E444A;
+}
+.icon-img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 12px;
+  margin-left: 65px;
 }
 
-/* состояние «развёрнуто» */
-.circle.expanded {
-  /* займет почти весь экран */
-  width: 90vw;
-  height: 90vh;
-  top: 5vh;
-  left: 5vw;
-  right: auto;
-  /* можно убрать скругления или сделать их небольшими */
-  border-radius: 8px;
+/* содержимое при hover */
+.expanded-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.expanded-img {
+  width: 200px;
+  height: auto;
+  margin-bottom: 12px;
+  margin-left: 65px;
+}
+.expanded-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #3E444A;
 }
 
-/* текст + иконка внутри свернутой сферы */
-.icon-text {
-  text-align: center;
-}
-.icon-text svg {
-  margin-bottom: 8px;
-}
-
-/* кнопка «Авторизоваться» */
+/* кнопка */
 .login-btn {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease 0.5s,
-              transform 0.3s ease 0.5s;
+  background-color: #3E444A;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-/* при разворачивании — показать кнопку */
-.circle.expanded .login-btn {
-  opacity: 1;
+.login-btn:hover {
+  background-color: #50575F;
+  transform: translateY(-2px);
+}
+.login-btn:active {
   transform: translateY(0);
 }
